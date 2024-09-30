@@ -1,0 +1,44 @@
+<svg width="89" height="89" viewBox="0 0 89 89" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.5" filter="url(#filter0_f_7_202)">
+<mask id="mask0_7_202" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="17" y="17" width="55" height="55">
+<rect x="17" y="17" width="55" height="55" rx="17" fill="#C4C4C4"/>
+</mask>
+<g mask="url(#mask0_7_202)">
+<g filter="url(#filter1_f_7_202)">
+<circle cx="59.4053" cy="59.9929" r="27.2614" fill="#97CF26"/>
+<circle cx="25.2904" cy="28.0403" r="22.957" fill="#00AAFF"/>
+<circle cx="30.2638" cy="58.9625" r="12.7937" fill="#A169F7"/>
+<circle cx="57.0293" cy="31.668" r="17.9351" fill="#FF6163"/>
+</g>
+</g>
+</g>
+<rect x="14" y="4" width="60" height="60" rx="17" fill="white"/>
+<mask id="mask1_7_202" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="14" y="4" width="60" height="60">
+<rect x="14" y="4" width="60" height="60" rx="17" fill="#C4C4C4"/>
+</mask>
+<g mask="url(#mask1_7_202)">
+<g filter="url(#filter2_f_7_202)">
+<circle cx="60.2602" cy="50.9013" r="29.7397" fill="#97CF26"/>
+<circle cx="23.044" cy="16.044" r="25.044" fill="#00AAFF"/>
+<circle cx="28.4696" cy="49.7773" r="13.9568" fill="#A169F7"/>
+<circle cx="57.6681" cy="20.0015" r="19.5656" fill="#FF6163"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_7_202" x="0" y="0" width="89" height="89" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="8.5" result="effect1_foregroundBlur_7_202"/>
+</filter>
+<filter id="filter1_f_7_202" x="-18.6666" y="-15.9167" width="126.333" height="124.171" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="10.5" result="effect1_foregroundBlur_7_202"/>
+</filter>
+<filter id="filter2_f_7_202" x="-23" y="-30" width="134" height="131.641" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="10.5" result="effect1_foregroundBlur_7_202"/>
+</filter>
+</defs>
+</svg>

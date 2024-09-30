@@ -1,0 +1,1370 @@
+
+@font-face {
+    font-family: 'Futura PT';
+    src: url('fonts/FuturaPT-Light.woff');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Futura PT';
+    src: url('fonts/FuturaPT-Book.woff');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Futura PT';
+    src: url('fonts/FuturaPT-Medium.woff');
+    font-weight: 450;
+}
+
+@font-face {
+    font-family: 'Futura PT';
+    src: url('fonts/FuturaPT-Demi.woff');
+    font-weight: 600;
+}
+
+
+
+
+/* общие */
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+
+}
+
+*::-moz-selection {
+    background-color: rgba(89, 86, 233, 0.4);
+}
+
+*::selection {
+    background-color: rgba(89, 86, 233, 0.4);
+}
+
+
+html {
+    font-size: 1vw;
+
+}
+
+button {
+    display: block;
+
+    font-family: 'Futura PT';
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+fieldset {
+    border: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+
+
+/* скролл */
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar{
+    background-color: rgb(236, 242, 246);
+}
+
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(89, 86, 233, 1);
+    
+    border-radius: 20px;
+}
+
+
+
+/* служебные классы */
+
+/* модальное окно при нажатии кнопки "Зарегистрируйся" */
+.close_modal-window {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+
+    padding: 1rem;
+
+    border-radius: 5px;
+    background: none;
+
+    -webkit-transition-property: background;
+
+    -o-transition-property: background;
+
+    transition-property: background;
+    -webkit-transition-duration: 0.1s;
+         -o-transition-duration: 0.1s;
+            transition-duration: 0.1s;
+}
+
+.close_modal-window:hover {
+    background: rgba(89, 86, 233, 0.5);
+}
+
+.close_modal-window img {
+    display: block;
+
+    width: 3rem;
+    height: auto;
+}
+
+.modal-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 3;
+
+    font-size: 1rem;
+
+    background-color: rgba(89, 86, 233, 0.4);
+}
+
+.modal-window .reg-container {
+    border-radius: 1.4em;
+
+    overflow: hidden;
+}
+
+.modal-window .user-form {
+    max-height: calc(100vh - 40px);
+    overflow: auto;
+}
+
+.modal-window .register-button {
+    margin: 25px auto 0 auto;
+    width: 100%;
+}
+
+
+
+/* стиль формы */
+.user-form {
+    font-size: 1rem;
+    padding: 2.6em;
+    width: 27em;
+    min-width: 300px;
+    
+    border-radius: 1.4em;
+    background-color: white;
+}
+
+.user-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+
+    font-size: 2.5em;
+}
+
+.user-form fieldset {
+    margin-top: 23px;
+}
+
+.user-form label {
+    font-size: 1.5em;
+}
+
+.user-form label[for='agreement_reg'] {
+    font-size: 1.2em;
+}
+
+.user-form input {
+    border: 1px solid #D6E0E7;
+    border-radius: 0.8em;
+}
+
+.user-form input:not(input[type='checkbox']) {
+    display: block;
+    margin-top: 10px;
+
+    width: 100%;
+    padding: 1em 0 1em 1.3em;
+    font-size: 1.5em;
+
+    font-weight: 300;
+    color: rgba(22, 23, 27, 1);
+    font-family: 'Futura PT';
+}
+
+.user-form input::-webkit-input-placeholder {
+    font-size: 0.9em;
+
+    color: rgba(119, 143, 157, 1);
+    font-weight: 300;
+    font-family: 'Futura PT';
+}
+
+.user-form input::-moz-placeholder {
+    font-size: 0.9em;
+
+    color: rgba(119, 143, 157, 1);
+    font-weight: 300;
+    font-family: 'Futura PT';
+}
+
+.user-form input:-ms-input-placeholder {
+    font-size: 0.9em;
+
+    color: rgba(119, 143, 157, 1);
+    font-weight: 300;
+    font-family: 'Futura PT';
+}
+
+.user-form input::-ms-input-placeholder {
+    font-size: 0.9em;
+
+    color: rgba(119, 143, 157, 1);
+    font-weight: 300;
+    font-family: 'Futura PT';
+}
+
+.user-form input::placeholder {
+    font-size: 0.9em;
+
+    color: rgba(119, 143, 157, 1);
+    font-weight: 300;
+    font-family: 'Futura PT';
+}
+
+.user-form .agreement-fieldset {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 0.8em;
+}
+
+.agreement-input {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+
+
+/* жирность шрифта (просто мне показалось так удобнее расставлять font-weight */
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-450 {
+    font-weight: 450;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+
+
+/* для подсветки нажатия */
+.violet-highlight {
+    background: rgba(89, 86, 233, 0.8) !important;
+}
+
+/* для нужного line-height (чтобы при этом при копировании одна строка не наезжала на другую */
+.right-line-height {
+    line-height: 100%;
+}
+
+.right-line-height p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.right-line-height span {
+    overflow: hidden;
+    height: 1em;
+}
+
+html {
+    min-width: 320px;    
+}
+
+body {      
+    scrollbar-gutter: stable;
+    background-color: rgb(236, 242, 246);
+    background-image:
+        url('img/клерк.png'),
+        url('img/banner-thumb-4\ 1.png'),
+        url('img/green\ line.svg'),
+        url('img/blue\ line.svg'),
+        url('img/дуги\ \(верх\).svg'),
+        url('img/дуги\ \(низ\).svg'),
+        url('img/белый\ круг.svg');
+    background-position:
+        left 50vw bottom 0,
+        right 0 top 140px,
+        left -112px top 917.23px,
+        right -177px top 3094.23px,
+        right 0 top 0,
+        left 0 bottom 0,
+        right -11.5vw bottom -11.5vw;
+    background-repeat: no-repeat;
+    background-size:
+        30vw auto,
+        54vw auto,
+        auto auto,
+        auto auto,
+        39vw auto,
+        39vw auto,
+        55vw auto;
+    font-family: 'Futura PT';
+    color: rgba(22, 23, 27, 1);
+}
+
+
+main {
+    margin: 30px auto 0 auto;
+
+    width: 61%;
+}
+
+nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+
+    width: 100%;
+    font-size: 1rem;
+}
+
+h1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    font-size: 1em;
+}
+
+h1 img {
+    display: inline-block;
+    margin-right: 5%;
+
+    width: 3em;
+    height: auto;
+}
+
+h1 span {
+    font-size: 2.3em;
+}
+
+.tg-icon {
+    padding: 0.8em 0.9em 0.5em 0.7em;
+
+    border-radius: 50%;
+    background-color: rgba(64, 179, 224, 1);
+    cursor: pointer;
+
+    -webkit-transition-property: -webkit-transform;
+
+    transition-property: -webkit-transform;
+
+    -o-transition-property: transform;
+
+    transition-property: transform;
+
+    transition-property: transform, -webkit-transform;
+    -webkit-transition-duration: 0.3s;
+         -o-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+}
+
+.tg-icon:hover {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+}
+
+.tg-icon img {
+    width: 2em;
+    height: auto;
+}
+
+.tg-icon img::-moz-selection {
+    background: none;
+}
+
+.tg-icon img::selection {
+    background: none;
+}
+
+
+.intro {
+    text-align: center;
+
+    font-size: 1rem;
+}
+
+.intro-p_1 {
+    font-size: 2em;
+}
+
+.intro-p_2 {
+    font-size: 1.5em;
+}
+
+
+
+.register {
+    margin-top: 57px;
+
+    font-size: 1rem;
+}
+
+.register-p_1 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.register-p_2 {
+    font-size: 4em;
+}
+
+.gradient-txt {
+    background: -o-linear-gradient(354.02deg, #A169F7 1.6%, #00AAFF 24.24%, #FF6163 50.71%, #97CF26 98.48%);
+    background: linear-gradient(95.98deg, #A169F7 1.6%, #00AAFF 24.24%, #FF6163 50.71%, #97CF26 98.48%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+}
+
+.register-p_3 {
+    margin-top: 20px;
+
+    font-size: 1.5em;
+}
+
+.register-button, .login-button {
+    margin-top: 40px;
+
+    font-size: 1.5em;
+    padding: 1.3em 1.7em;
+
+    letter-spacing: 0.05em;
+    border-radius: 1.1em;
+    background-color: rgba(89, 86, 233, 1);
+    color: white;
+    -webkit-box-shadow: 0px 5px 15px rgba(89, 86, 233, 1);
+            box-shadow: 0px 5px 15px rgba(89, 86, 233, 1);
+
+    -webkit-transition-property: background, -webkit-transform;
+
+    transition-property: background, -webkit-transform;
+
+    -o-transition-property: transform, background;
+
+    transition-property: transform, background;
+
+    transition-property: transform, background, -webkit-transform;
+    -webkit-transition-duration: 0.3s, 0.1s;
+         -o-transition-duration: 0.3s, 0.1s;
+            transition-duration: 0.3s, 0.1s;
+}
+
+.register-button:hover, .login-button:hover {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+}
+
+
+.advantages {
+    margin-top: 250px;
+
+    width: 100%;
+    font-size: 1rem;
+    padding-bottom: 175px;
+
+    background: url('img/Путь.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 0px;
+}
+
+.try-button {
+    --border: linear-gradient(97deg, #0FA6F7 19.02%, #FF6163 46.12%, #A169F7 68.04%, #97CF26 95.54%);
+    --brightness: brightness(1);
+
+    position: relative;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+
+    -webkit-box-sizing: content-box;
+
+            box-sizing: content-box;
+    padding: 1em;
+    min-width: 250px;
+
+    border-radius: 9em;
+    background-image: url('img/фон\ на\ test-drive_button.svg');
+    background-size: cover;
+    background-color: rgba(39, 39, 46, 1);
+}
+
+/* с градиентными границами некоторая проблема */
+.border-of_try-button {
+    position: absolute;
+    top: -0.6em;
+    right: -0.6em;
+    bottom: -0.6em;
+    left: -0.6em;
+    z-index: -1;
+
+    border-radius: 9em;
+    background: var(--border);
+    opacity: 0;
+
+    -webkit-transition-property: opacity;
+
+    -o-transition-property: opacity;
+
+    transition-property: opacity;
+    -webkit-transition-duration: 0.3s;
+         -o-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+}
+
+/* из этого вытекает и проблема box-shadow. Если поставить ее на кнопку, то она затемняет границу. 
+    Поэтому применю псевдоэлемент.
+*/
+.try-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    border-radius: 9em;
+    -webkit-box-shadow: 0px 1px 30px rgb(144, 146, 149);
+            box-shadow: 0px 1px 30px rgb(144, 146, 149);
+}
+
+.try-button .text-content {
+    margin: 0 3.125em;
+    text-align: center;
+
+    font-size: 1em;
+}
+
+.try-button .ruble {
+    width: 10.4em;
+    height: auto;
+}
+
+.try-button .ruble img {
+    width: 100%;
+}
+
+.try-button .ruble img::-moz-selection {
+    background: none;
+}
+
+.try-button .ruble img::selection {
+    background: none;
+}
+
+.try-button .text-content h3 {
+    font-size: 3em;
+
+    color: rgba(250, 184, 196, 1);
+}
+
+.try-button .text-content p {
+    font-size: 1.8em;
+}
+
+.advantages h2 {
+    margin-top: 130px;
+    text-align: center;
+
+    font-size: 4em;
+}
+
+.advantages-list {
+    margin-top: 80px;
+
+    padding: 0 63px 0 80px;
+    font-size: 1em;
+
+}
+
+.advantages-list li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 10em;
+}
+
+.advantages-list .text-content {
+    width: 50%;
+}
+
+.advantages-list .text-content h3 {
+    position: relative;
+    white-space: nowrap;
+
+    font-size: 3.3em;
+}
+
+.advantages-list .text-content h4 {
+    margin: 2.1em 0;
+
+    font-size: 1.1em;
+
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    white-space: nowrap;
+}
+
+.advantages-list .text-content>p {
+    font-size: 1.25em;
+
+    margin-top: 10px;
+}
+
+.privyazhem-tel_h3 {
+    position: relative;
+}
+
+.privyazhem-tel_h3::after {
+    content: 'бесплатно';
+    position: absolute;
+    top: 2em;
+    left: 10em;
+    display: inline-block;
+    font-size: 0.5em;
+    padding: 5px;
+
+    border-radius: 25px;
+    text-transform: uppercase;
+    background: -o-linear-gradient(353.97deg, #4CD7AD 18.67%, #17FF2F 109.14%);
+    background: linear-gradient(96.03deg, #4CD7AD 18.67%, #17FF2F 109.14%);
+}
+
+.privyazhem-tel_p {
+    margin-top: 40px !important;
+}
+
+.avtodozvon_img {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    position: relative;
+
+    bottom: 30px;
+
+    width: 12.8em;
+}
+
+.privyazhem-tel_img {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    position: relative;
+
+    left: 5vw;
+
+    width: 17em;
+}
+
+.put-calls_img {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    position: relative;
+
+    right: 5vw;
+
+    width: 17.2em;
+}
+
+.highlight-color_img {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    position: relative;
+
+    right: 50px;
+
+    width: 15.6em;
+}
+
+.filter_img {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    position: relative;
+    left: 5vw;
+
+    width: 24em;
+}
+
+
+.price{
+    margin: 0 auto;
+    text-align: center;
+    
+    width: 83%;
+    padding: 3.4vw 10% ;
+    font-size: 1rem;
+
+    border-radius: 7.5vw;    
+    background-color: rgba(216, 225, 232, 1);
+    background-image: url('img/price-shape\ 1.png'), url('img/price-shape\ 2.png');    
+    background-repeat: no-repeat;
+    background-size: 20vw auto, 30vw auto;
+    background-position: right 0 top 0, left 0 bottom 0;    
+    
+}
+
+.price h2{    
+    font-size: 3.75em;
+}
+
+.price-list{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    gap: 25px;
+    margin-top: 67px;
+}
+.price-list li{
+    padding: 2.8vw 3.1vw;
+
+    background-color: rgba(39, 39, 46, 1);
+    border-radius: 1.5vw;    
+    -webkit-transition-property: -webkit-transform;    
+    transition-property: -webkit-transform;    
+    -o-transition-property: transform;    
+    transition-property: transform;    
+    transition-property: transform, -webkit-transform;
+    -webkit-transition-duration: 0.3s;
+         -o-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+}
+.price-list li:hover{
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+}
+.price-list li.chosen{
+    background-color: rgba(89, 86, 233, 1);    
+}
+.price-list li.chosen *{
+    color: white !important;
+}
+.price-list h3{
+    font-size: 3.3em;
+
+    color: rgba(250, 184, 196, 1);
+}
+.price-list h4{    
+
+    font-size: 1.9em;
+
+    color: white;    
+}
+.price-list p{
+    margin-top: 0.8em;
+
+    font-size: 1em;
+
+    color: rgba(171, 171, 171, 1);    
+}
+
+.price > p{
+    margin-top: 50px;
+    text-align: center;    
+
+    font-size: 2em;           
+}
+.price > a{
+    text-align: center;
+
+    font-size: 2.4em;
+    
+    text-decoration: none;
+    color: rgba(89, 86, 233, 1);
+}
+.price .mail{
+    text-align: center;
+    
+    font-size: 2em;
+
+    color: rgba(40, 159, 102, 1);
+}
+
+
+
+.end{
+    margin: 160px auto 0 auto;    
+
+    width: 61%;  
+    padding: 0 25px;  
+    font-size: 1rem;    
+}
+
+.end > h3{
+    text-align: center;
+
+    font-size: 2em;
+}
+.end > h2{
+    margin-top: 1.6vw;
+    text-align: center;
+
+    font-size: 3.3em;    
+}
+.end > h2 p{
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;             
+    white-space: nowrap;    
+}
+
+
+
+.end .container{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;  
+    -webkit-box-pack: justify;  
+        -ms-flex-pack: justify;  
+            justify-content: space-between;
+
+    margin-top: 100px;      
+}
+.end .login-container{     
+    border-radius: 1.4em;        
+}
+.end .login-container .user-form{
+    min-width: 0;
+}
+.login-button{
+    width: 100% ;
+}
+
+.info{
+    margin-left: 6.25%;    
+}
+.info > *{
+    margin: 0 auto;
+}
+.exclamation-mark{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;    
+
+    width: 6vw;
+    height: 6vw;
+    font-size: 3.3em;
+
+    background-color: rgba(0, 170, 255, 1);
+    border-radius: 100%;
+    color: white;
+}
+.info > p{
+    margin-top: 1.3vw;
+    text-align: center;
+
+    font-size: 1.5em;
+}
+
+
+
+footer{
+    margin: 300px auto 150px auto;
+
+    width: 50%;
+}
+
+footer h1 img{
+    margin-right: 2%;
+}
+footer .me{
+    font-size: 1vw;
+}
+
+/* MOBIIIIIIIIILE
+
+
+
+*/
+@media (max-width: 768px) {
+    body {
+        background-position:
+            left 50% bottom 0,
+            top 590px right -100px,
+            left -112px top 917.23px,
+            right -177px top 3094.23px,
+            right -15vw top -10vw,
+            left -3vw bottom 0,
+            right -120vw bottom -60vw;
+        background-size:
+            80vw auto,
+            590px auto,
+            auto auto,
+            auto auto,
+            80vw auto,
+            100vw auto,
+            195vw auto;
+    }
+
+    main, .end {
+        width: 90%;
+    }
+
+    h1 img {
+        width: 40px;
+        height: auto;
+    }
+
+    h1 span {
+        font-size: 24px;
+    }
+
+    .tg-icon {
+        padding: 12px 13px 9px 9px;
+    }
+
+    .tg-icon img {
+        width: 20px;
+        height: auto;
+    }
+
+
+    .intro {
+        width: 80%;
+        margin: 86px auto 0 auto;
+    }
+
+    .intro-p_1 {
+        font-size: 20px;
+    }
+
+    .intro-p_2 {
+        font-size: 20px;
+    }
+
+
+    .register {
+        width: 100%;
+        margin-top: 37px;
+        text-align: center;
+    }
+
+    .register-p_1 {
+        font-size: 20px;
+    }
+
+    .register-p_2 {
+        margin-top: 16px;
+
+        font-size: 40px;
+    }
+
+    .register-p_2 p {
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+
+    .register-p_2 span {
+        height: 40px;
+    }
+
+    .register-p_3 {
+        font-size: 16px;
+    }
+
+    .register-button, .login-button {
+        margin: 50px auto 0 auto;
+
+        font-size: 24px;
+        padding: 19px 24px;
+
+        border-radius: 21px;
+    }
+
+
+    .advantages {
+        margin-top: 400px;
+        background: none;
+    }
+
+    .try-button {
+        padding: 20px 10px;
+    }
+
+    .try-button .text-content {
+        margin: 0px 13px;
+    }
+
+    .try-button .ruble {
+        width: 86px;
+        height: auto;
+    }
+
+    .advantages h2 {
+        font-size: 36px;
+    }
+
+    
+
+    .advantages-list {
+        margin-top: 0;
+        padding: 0;
+    }
+
+    .advantages-list li {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        margin-top: 31px;
+        width: 100%;
+    }
+
+    .advantages-list .text-content {
+        -webkit-box-ordinal-group: 2;
+            -ms-flex-order: 1;
+                order: 1;
+        width: 100%;
+    }
+
+    .advantages-list .text-content h3 {
+        font-size: 40px;
+    }
+
+    .advantages-list .text-content h4 {
+        font-size: 16px;
+        margin: 20px 0;
+    }
+
+    .advantages-list img {
+        position: static !important;
+        -webkit-box-ordinal-group: 0;
+            -ms-flex-order: -1;
+                order: -1;
+        display: block;
+        margin: 40px auto 40px auto;
+    }
+
+    .advantages-list .text-content>p {
+        font-size: 16px;
+    }
+
+    .avtodozvon_img {
+        width: 107px;
+    }
+
+    .privyazhem-tel_img {
+        width: 158px;
+    }
+
+    .put-calls_img {
+        width: 160px;
+    }
+
+    .highlight-color_img {
+        width: 177px;
+    }
+
+    .filter_img {
+        width: 179px;
+    }
+    
+    .price{                
+        width: 90%;    
+        padding: 100px 10%;
+        
+        background-size: 225px auto, 324px auto;          
+    }
+
+    .price-list{
+        margin: 0;
+
+        display: block;
+    }    
+    .price h2{        
+        font-size: 36px;           
+    }
+
+    .price-list li{        
+        margin: 40px auto;
+
+        width: 64%;
+        padding: 21px;
+
+        border-radius: 16px;
+    }    
+    .price-list h3{
+        font-size: 38px;        
+    }
+    .price-list h4{
+        font-size: 21px;
+    }
+    .price-list p{
+        font-size: 12px;
+    }
+    
+    .price > p{
+        margin-top: 30px;
+
+        font-size: 24px;
+    }
+    .price > a{
+        font-size: 36px;
+    }
+    .price .mail{
+        font-size: 24px;
+    }
+
+    .end .container{        
+        -webkit-box-orient: vertical;        
+        -webkit-box-direction: normal;        
+            -ms-flex-direction: column;        
+                flex-direction: column;                
+    }
+        
+    .end .login-container{
+        margin-top: 50px;
+    }
+    .end h2{
+        font-size: 40px;
+    }    
+
+    .end h3{
+        font-size: 30px;
+    }    
+    @media (max-width: 400px) {
+        .price-list h3{
+            font-size: 30px;
+        }
+        .end h2{
+            font-size: 35px;
+        }
+    }
+
+    .login-container .user-form{
+        width: 100%;
+    }    
+
+    .info{
+        -webkit-box-ordinal-group: 0;
+            -ms-flex-order: -1;
+                order: -1;
+    }
+
+    .exclamation-mark{
+        width: 61px;
+        height: 61px;
+        font-size: 39px;
+    }
+
+    .info > p{
+        margin-top: 16px;
+        text-align: center;
+    
+        font-size: 18px;
+    }
+
+    
+    footer{
+        margin: 60px auto 450px auto;
+        margin-top: 60px;
+        width: 90%;        
+    }
+    footer h1{
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+    footer .me{
+        text-align: center;
+        font-size: 16px;
+    }
+
+    
+
+    .close_modal-window {
+        padding: 10px;
+    }
+
+    .close_modal-window img {
+        width: 30px;
+        height: auto;
+    }
+
+
+
+    /* настройка формы */
+
+    .modal-window .reg-container, .login-container{
+        border-radius: 27px;
+    }
+
+    .user-form{
+        padding: 35px;
+    }
+
+    .user-form h2 {
+        font-size: 40px;
+        
+    }
+
+    .success_reg h2 {
+        font-size: 30px !important;
+    }
+
+    .user-form label {
+        font-size: 24px;
+    }
+
+    .user-form label[for='agreement_reg'] {
+        font-size: 16px;
+    }
+
+    .user-form input {
+        border-radius: 15px;
+    }
+
+    .user-form input:not(input[type='checkbox']) {
+        font-size: 24px;
+    }
+
+    .user-form input::-webkit-input-placeholder {
+        font-size: 20px;
+    }
+
+    .user-form input::-moz-placeholder {
+        font-size: 20px;
+    }
+
+    .user-form input:-ms-input-placeholder {
+        font-size: 20px;
+    }
+
+    .user-form input::-ms-input-placeholder {
+        font-size: 20px;
+    }
+
+    .user-form input::placeholder {
+        font-size: 20px;
+    }
+
+    .agreement-fieldset {
+        gap: 15px;
+    }
+
+    .agreement-fieldset label {
+        font-size: 20px;        
+    }
+    .agreement-input {
+        width: 25px;
+        height: 25px;
+    }
+
+    .modal-window .register-button, .login-button{
+        width: 80%;
+        padding: 9px 0;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+/* немного не нравится шрифт на маленьких ноутах, надо чутка повысить */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    html {
+        font-size: 1.4vw;
+    }
+    .price{
+        font-size: 1vw;
+    }
+    .advantages{
+        font-size: 1.2vw;                        
+    }
+    .avtodozvon_img{
+        bottom: 60px;
+    }
+    .text-content > p{
+        font-size: 1.6vw;
+    }
+    .put-calls_img{
+        left: 0;
+    }
+    .privyazhem-tel_img{
+        bottom: 20px;
+        left: 0;
+    }
+    .highlight-color_img{
+        left: -90px;
+    }
+}
+
